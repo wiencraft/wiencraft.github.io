@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0 10px;
+}
+body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('arkaplan.png') no-repeat center center/cover;
+      z-index: -2;
+    }
+
+    .blur-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+
+    #login, #chat {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      width: 300px;
+      z-index: 1;
+    }
+
+    input, button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #2e8b57;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #messages {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 5px;
+      background: #fff;
+    }
+#messages div {
+  max-width: 55%;
+  word-wrap: break-word;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+input {
+  padding: 8px;
+  margin: 5px 0;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#messages div {
+  margin-bottom: 8px;
+}
+
+#messages div button {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.message {
+    padding: 5px;
+    margin: 5px;
+    max-width: 70%;
+    border-radius: 10px;
+}
+
+.own-message {
+    background-color: #dcf8c6;
+    text-align: right;
+    margin-left: auto;
+}
+
+.other-message {
+    background-color: #ffffff;
+    text-align: left;
+    margin-right: auto;
+}
+
