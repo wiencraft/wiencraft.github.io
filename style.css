@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f0f0f;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  user-select: none;
+
+  font-size: 20vw;
+  font-weight: bold;
+
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 5s linear infinite;
+}
+
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+}
+
+.letter {
+  font-size: 20vw;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.05);
+  animation: float 5s infinite ease-in-out;
+  display: inline-block;
+}
+
+.letter:nth-child(1) { animation-delay: 0s; }
+.letter:nth-child(2) { animation-delay: 1s; }
+.letter:nth-child(3) { animation-delay: 2s; }
+.letter:nth-child(4) { animation-delay: 3s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Buttons container */
+.buttons {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+/* Butonlar */
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 5px rgba(255,255,255,0.2);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover animasyon */
+.btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 15px #fff;
+  transform: scale(1.1);
+}
+
+/* İkonlar */
+.btn i {
+  font-size: 1.4em;
+  transition: transform 0.4s ease;
+}
+
+/* Hoverda ikon biraz döner */
+.btn:hover i {
+  transform: rotate(20deg);
+}
+
+/* Discord butonu renkleri */
+.discord {
+  border-color: #7289da;
+  color: #7289da;
+}
+
+.discord:hover {
+  background: #7289da;
+  color: white;
+  box-shadow: 0 0 15px #7289da;
+}
+
+/* Minecraft butonu renkleri */
+.minecraft {
+  border-color: #62b600;
+  color: #62b600;
+}
+
+.minecraft:hover {
+  background: #62b600;
+  color: white;
+  box-shadow: 0 0 15px #62b600;
+}
+
+/* TikTok butonu renkleri */
+.tiktok {
+  border-color: #69C9D0;
+  color: #69C9D0;
+}
+
+.tiktok:hover {
+  background: #69C9D0;
+  color: black;
+  box-shadow: 0 0 15px #69C9D0;
+}
+
+/* Responsive: Küçük ekranlarda butonlar tam genişlikte alt alta */
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+    bottom: 15px;
+  }
+  
+  .btn {
+    justify-content: center;
+    width: 90%;
+  }
+}
