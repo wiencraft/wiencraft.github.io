@@ -1,39 +1,24 @@
 body {
   margin: 0;
   padding: 0;
-  background: #0f0f0f;
-  overflow: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000; /* Siyah arka plan */
+  overflow: hidden;
 }
 
-.background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-  user-select: none;
-
-  font-size: 20vw;
-  font-weight: bold;
-
-  background: linear-gradient(
-    90deg,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet,
-    red
-  );
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rainbowMove 5s linear infinite;
+/* GIF Arka Plan */
+.background-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('steve.gif') center center no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
 }
-
 @keyframes rainbowMove {
   0% {
     background-position: 0% 50%;
@@ -47,13 +32,43 @@ body {
 }
 }
 
-.letter {
-  font-size: 20vw;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.05);
-  animation: float 5s infinite ease-in-out;
-  display: inline-block;
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
+
+/* WIEN Animasyonu */
+.background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.letter {
+  display: inline-block;
+  font-size: 17vw;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 800% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 4s linear infinite, float 5s infinite ease-in-out;
+}
+
 
 .letter:nth-child(1) { animation-delay: 0s; }
 .letter:nth-child(2) { animation-delay: 1s; }
@@ -66,7 +81,7 @@ body {
   100% { transform: translateY(0); }
 }
 
-/* Buttons container */
+/* Butonlar */
 .buttons {
   position: fixed;
   bottom: 20px;
@@ -74,12 +89,11 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  z-index: 10;
+  z-index: 2;
   flex-wrap: wrap;
   padding: 0 10px;
 }
 
-/* Butonlar */
 .btn {
   display: flex;
   align-items: center;
@@ -99,7 +113,6 @@ body {
   overflow: hidden;
 }
 
-/* Hover animasyon */
 .btn:hover {
   background: #fff;
   color: #000;
@@ -107,18 +120,15 @@ body {
   transform: scale(1.1);
 }
 
-/* İkonlar */
 .btn i {
   font-size: 1.4em;
   transition: transform 0.4s ease;
 }
 
-/* Hoverda ikon biraz döner */
 .btn:hover i {
   transform: rotate(20deg);
 }
 
-/* Discord butonu renkleri */
 .discord {
   border-color: #7289da;
   color: #7289da;
@@ -130,7 +140,6 @@ body {
   box-shadow: 0 0 15px #7289da;
 }
 
-/* Minecraft butonu renkleri */
 .minecraft {
   border-color: #62b600;
   color: #62b600;
@@ -142,7 +151,6 @@ body {
   box-shadow: 0 0 15px #62b600;
 }
 
-/* TikTok butonu renkleri */
 .tiktok {
   border-color: #69C9D0;
   color: #69C9D0;
@@ -154,7 +162,7 @@ body {
   box-shadow: 0 0 15px #69C9D0;
 }
 
-/* Responsive: Küçük ekranlarda butonlar tam genişlikte alt alta */
+/* Responsive */
 @media (max-width: 480px) {
   .buttons {
     flex-direction: column;
